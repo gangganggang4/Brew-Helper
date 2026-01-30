@@ -10,7 +10,6 @@ class FinalBrewingHelper(QMainWindow):
         self.setWindowTitle("Planet Earth MC - 양조 마스터 헬퍼")
         self.setGeometry(100, 100, 1250, 800)
 
-        # 모든 술 데이터베이스 (제공된 표 전체 반영)
         self.brewing_db = {
             # 양조주
             "맥주": {"time": 11, "ing": "보리 4, 홉 2", "barrel": "모든 종류", "age": 2, "distill": "X", "price": "7.5", "alcohol": "13"},
@@ -52,7 +51,6 @@ class FinalBrewingHelper(QMainWindow):
         main_layout = QHBoxLayout(central_widget)
         splitter = QSplitter(Qt.Orientation.Horizontal)
 
-        # --- 왼쪽: 상세 레시피 도감 ---
         left_widget = QWidget()
         left_layout = QVBoxLayout(left_widget)
 
@@ -66,7 +64,6 @@ class FinalBrewingHelper(QMainWindow):
         left_layout.addWidget(self.combo)
         left_layout.addWidget(self.recipe_display)
 
-        # --- 오른쪽: 타이머 컨트롤러 ---
         right_widget = QWidget()
         right_layout = QVBoxLayout(right_widget)
         right_widget.setFixedWidth(400)
@@ -84,7 +81,6 @@ class FinalBrewingHelper(QMainWindow):
         
         self.pbar = QProgressBar()
         
-        # 버튼 그룹
         btn_layout = QVBoxLayout()
         self.btn_ferment = QPushButton("발효 시작 (분 단위)")
         self.btn_age = QPushButton("숙성 시작 (20분=1년 단위)")
@@ -103,7 +99,6 @@ class FinalBrewingHelper(QMainWindow):
         timer_vbox.addWidget(self.pbar)
         timer_vbox.addLayout(btn_layout)
 
-        # 하단 팁
 
         right_layout.addWidget(timer_frame)
 
